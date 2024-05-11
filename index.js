@@ -28,27 +28,24 @@ const PORT = process.env.PORT;
 app.get("/",async (req,res)=>{
 
     let data = await Task.find({});
-    console.log("Root DAta"+data);
+    console.log(data);
     if(data){
-        data =[];
         res.render("home.ejs",{data});
     }else{
-       res.render("home.ejs",{data});
+        data = [];
+        res.render("home.ejs",{data});
     }
-   
 });
 
 app.get("/home",async (req,res)=>{
-
     let data = await Task.find({});
-    console.log("Root DAta"+data);
+    console.log(data);
     if(data){
-        data =[];
         res.render("home.ejs",{data});
     }else{
-       res.render("home.ejs",{data});
+        data = [];
+        res.render("home.ejs",{data});
     }
-   
 });
 
 app.post("/home/add",async(req,res)=>{

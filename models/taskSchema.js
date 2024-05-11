@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-
+async function main() {
+    await mongoose.connect(process.env.MONGODB_CONNECT_URI);
+  }
 const taskSchema = new mongoose.Schema({
     title:String,
     content:String,
