@@ -25,11 +25,6 @@ const { title } = require("process");
 const PORT = process.env.PORT;
 
 
-11
-app.get("/",(req,res)=>{
-
-    res.render("home.ejs");
-});
 app.get("/home",async(req,res)=>{
     let data = await Task.find({});
     if(data){
