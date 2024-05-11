@@ -15,11 +15,13 @@ main().then(()=>{
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/todo');
 }
+
+require('dotenv').config();
 const Task = require("./models/taskSchema.js");
 const { title } = require("process");
+const port = process.env.PORT;
 
-
-app.listen(8080,()=>{
+app.listen(port,()=>{
     console.log("Listenning On PORT:8080");
 });
 
