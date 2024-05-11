@@ -32,7 +32,13 @@ app.get("/",(req,res)=>{
 });
 app.get("/home",async(req,res)=>{
     let data = await Task.find({});
-     res.render("home.ejs",{data});
+    if(data){
+        res.render("home.ejs",{data});
+    }else{
+        data =[];
+        res.render("home.ejs",{data});
+    }
+   
 });
 
 app.post("/home/add",async(req,res)=>{
