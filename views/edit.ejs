@@ -146,7 +146,7 @@
     .all-tasks{
         width: 90%;
         background-color: orange;
-        margin:3rem auto 15rem auto;
+        margin:3rem auto 1rem auto;
         max-width:980px;
         padding: 1rem 1.3rem;
         border-radius: 16px ;
@@ -215,8 +215,22 @@
 
    main{
     max-width: 600px;
-    margin: 1rem auto;
+    margin: 1rem auto 0.1rem auto;
    }
+   footer{
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .footer-div{
+        width: 40%;
+        margin: 0 auto;
+        color: white;
+        & a{
+            color: orange;
+            text-decoration: none;
+        }
+    }
   </style>
 <body>
     <header>
@@ -234,5 +248,11 @@
     <button type="submit" draggable="true" id="add-btn">Save Task</button> <button type="reset" id="add-btn">Reset</button>
     </form>
    </main>
+   <footer>
+    <div class="footer-div">
+        Made WIth Love &heartsuit; By <a href="https://www.instagram.com/mohd_irfan070/">Mohammed Irfan</a>
+    </div>
+  
+</footer>      
    </body>
    </html>

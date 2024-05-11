@@ -130,7 +130,7 @@
     .all-tasks{
         width: 90%;
         background-color: orange;
-        margin:3rem auto 15rem auto;
+        margin:3rem auto 1rem auto;
         max-width:980px;
         padding: 1rem 1.3rem;
         border-radius: 16px ;
@@ -266,7 +266,20 @@
     #result-title::selection{
         color: rgb(89, 221, 104);
     }
-    
+    footer{
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .footer-div{
+        width: 40%;
+        margin: 0 auto;
+        color: white;
+        & a{
+            color: orange;
+            text-decoration: none;
+        }
+    }
   </style>
 <body>
        <header>
@@ -334,7 +347,11 @@
              <%}%>
         </div> -->
     </main>
-
-        </main>
+        <footer>
+            <div class="footer-div">
+                Made WIth Love &heartsuit; By <a href="https://www.instagram.com/mohd_irfan070/">Mohammed Irfan</a>
+            </div>
+          
+        </footer>        
 </body>
 </html>
