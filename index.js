@@ -21,31 +21,53 @@ async function main() {
 
 
 const Task = require("./models/taskSchema.js");
-const { title } = require("process");
-const PORT = process.env.PORT;
 
+const PORT = process.env.PORT;
+app.listen(PORT,()=>{
+    console.log("Listenning On PORT:"+PORT);
+});1
 
 app.get("/",async (req,res)=>{
 
-    let data = await Task.find({});
-    console.log(data);
-    if(data){
-        res.render("home.ejs",{data});
-    }else{
+    try {
+        let data = await Task.find({});
+        console.log(data);
+        if(data){
+            res.render("home.ejs",{data});
+        }else{
+            data = [];
+            res.render("home.ejs",{data});
+        }
+    } catch (error) {
         data = [];
         res.render("home.ejs",{data});
     }
-});
+    });
 
 app.get("/home",async (req,res)=>{
-    let data = await Task.find({});
-    console.log(data);
-    if(data){
-        res.render("home.ejs",{data});
-    }else{
+    // let data = await Task.find({});
+    // console.log(data);
+    // if(data){
+    //     res.render("home.ejs",{data});
+    // }else{
+    //     data = [];
+    //     res.render("home.ejs",{data});
+    // }
+
+    try {
+        let data = await Task.find({});
+        console.log(data);
+        if(data){
+            res.render("home.ejs",{data});
+        }else{
+            data = [];
+            res.render("home.ejs",{data});
+        }
+    } catch (error) {
         data = [];
         res.render("home.ejs",{data});
     }
+    
 });
 
 app.post("/home/add",async(req,res)=>{
@@ -86,6 +108,3 @@ res.redirect("/home");
 });
 
 
-app.listen(PORT,()=>{
-    console.log("Listenning On PORT:"+PORT);
-});
