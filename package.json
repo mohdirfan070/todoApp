@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Mohammed Irfan",
@@ -15,6 +15,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "method-override": "^3.0.0",
+    "mongodb": "^6.6.1",
     "mongoose": "^8.3.2"
   }
 }

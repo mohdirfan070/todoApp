@@ -1,5 +1,6 @@
 const express  = require("express");
 const app  =  express();
+require('dotenv').config(()=>{console.log("ENV aaya")});
 const path = require("path");
 app.use(express.static(path.join(__dirname,"public/")));
 app.use(express.urlencoded({extended:true}));
@@ -10,20 +11,20 @@ app.use(methodOverride('_method'));
 const mongoose = require('mongoose');
 main().then(()=>{
     console.log("Connected Succesfully!");
-}).catch(err => console.log(err));
+}).catch(err => console.log("error during connecting to database is:"+err));
+
+console.log(process.env.PORT);
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/todo');
+  await mongoose.connect(process.env.MONGODB_CONNECT_URI);
 }
 
-require('dotenv').config();
+
 const Task = require("./models/taskSchema.js");
 const { title } = require("process");
-const port = process.env.PORT;
+const PORT = process.env.PORT;
 
-app.listen(port,()=>{
-    console.log("Listenning On PORT:8080");
-});
+
 11
 app.get("/",(req,res)=>{
 
@@ -69,4 +70,9 @@ app.put("/home/edited/:id",async(req,res)=>{
     // console.log({newtitle,newcontent});
     await Task.findByIdAndUpdate(id,{title:newtitle,content:newcontent,time:Date().slice(0,24),new:true});
 res.redirect("/home");
+});
+
+
+app.listen(PORT,()=>{
+    console.log("Listenning On PORT:"+PORT);
 });

@@ -277,7 +277,7 @@
    
     <main>
         <div class="form">
-            <form  action="http://13.228.225.19:8080/home/add" method="post">
+            <form  action=" /home/add" method="post">
                 <h2 id="new-task-title">Add a New Task:</h2>
             <input type="text" name="title" required id="title" placeholder="Enter a Title">
            <textarea name="content" placeholder="Enter your Content" id="content" cols="30" rows="10"></textarea>  <br>
@@ -303,18 +303,18 @@
                         </div>
                             <div class="forms">
                                 
-                            <form class="from-l" action="http://13.228.225.19:8080/home/delete/<%=element.id%>?_method=DELETE" method="post">
+                            <form class="from-l" action=" /home/delete/<%=element.id%>?_method=DELETE" method="post">
                                 <input style="display: none;" type="text" name="id" value="<%= element.id%>">
                             <button id="delete-btn">  Delete </button>
                         </form>
-                        <form class="from-l"  action="http://13.228.225.19:8080/home/edit/<%=element.id%>" method="get">
+                        <form class="from-l"  action=" /home/edit/<%=element.id%>" method="get">
                             <button id="edit-btn">Edit</button>
                         </form>
 
 
-                        <form class="form-res"  action="http://13.228.225.19:8080/home/edit/<%=element.id%>" method="get"><button style="background-color: transparent; border: none;"><img id="edit-btn-img" src="images/editIcon.png" alt=""></button>
+                        <form class="form-res"  action=" /home/edit/<%=element.id%>" method="get"><button style="background-color: transparent; border: none;"><img id="edit-btn-img" src="images/editIcon.png" alt=""></button>
                         </form>
-                        <form class="form-res" action="http://13.228.225.19:8080/home/delete/<%=element.id%>?_method=DELETE" method="post">
+                        <form class="form-res" action=" /home/delete/<%=element.id%>?_method=DELETE" method="post">
                             <input style="display: none;" type="text" name="id" value="<%= element.id%>">
                     <button style="background-color: transparent; border: none; cursor: pointer;">  <img style="height: 2.8rem;" id="edit-btn-img" src="images/deleteIcon.png" alt=""> </button>
                     </form>
