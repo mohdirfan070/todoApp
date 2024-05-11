@@ -221,12 +221,12 @@
 <body>
     <header>
         <nav>
-           <a href="http://localhost:8080/home"> <h2>Todo APP</h2> </a>
-            <a href="http://localhost:8080/home">Back to Home</a>
+           <a href="http://13.228.225.19:8080/home"> <h2>Todo APP</h2> </a>
+            <a href="http://13.228.225.19:8080/home">Back to Home</a>
         </nav>
     </header>
    <main>
-    <form action="http://localhost:8080/home/edited/<%=task.id%>?_method=PUT" method="post">
+    <form action="http://13.228.225.19:8080/home/edited/<%=task.id%>?_method=PUT" method="post">
         <h2 id="new-task-title">Edit Task:</h2>
         <textarea name="newtitle" id="title" cols="30" rows="10"><%=task.title%></textarea>
        <textarea name="newcontent" placeholder="Enter your Content" id="content" cols="30" rows="10"><%=task.content%></textarea>  <br>
