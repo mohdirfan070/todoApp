@@ -25,36 +25,40 @@ const { title } = require("process");
 const PORT = process.env.PORT;
 
 
-app.get("/",async(req,res)=>{
+app.get("/",async (req,res)=>{
+
     let data = await Task.find({});
+    console.log("Root DAta"+data);
     if(data){
-        res.render("home.ejs",{data});
-    }else{
         data =[];
         res.render("home.ejs",{data});
+    }else{
+       res.render("home.ejs",{data});
     }
    
 });
 
-app.get("/home",async(req,res)=>{
+app.get("/home",async (req,res)=>{
+
     let data = await Task.find({});
+    console.log("Root DAta"+data);
     if(data){
-        res.render("home.ejs",{data});
-    }else{
         data =[];
         res.render("home.ejs",{data});
+    }else{
+       res.render("home.ejs",{data});
     }
    
 });
 
 app.post("/home/add",async(req,res)=>{
    let {title,content}=req.body;
-   if(title!=""||content!=""){
+
     await Task.insertMany([{title:title,content:content,time:Date().slice(0,24)}]).then(()=>{
         console.log("Added new Tasks Successfully");
         res.redirect("/home");
        }) 
-   }
+
    
 //    console.log({title,content});
   
