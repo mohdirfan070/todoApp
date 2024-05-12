@@ -19,7 +19,7 @@ async function main() {
   await mongoose.connect(process.env.MONGODB_CONNECT_URI);
 }
 
-
+const User = require("./models/userSchema.js");
 const Task = require("./models/taskSchema.js");
 
 const PORT = process.env.PORT;
@@ -27,11 +27,11 @@ app.listen(PORT,()=>{
     console.log("Listenning On PORT:"+PORT);
 });1
 
-app.get("/",async (req,res)=>{
 
+app.get("/",async (req,res)=>{
     try {
         let data = await Task.find({});
-        console.log(data);
+        // console.log(data);
         if(data){
             res.render("home.ejs",{data});
         }else{
@@ -45,18 +45,9 @@ app.get("/",async (req,res)=>{
     });
 
 app.get("/home",async (req,res)=>{
-    // let data = await Task.find({});
-    // console.log(data);
-    // if(data){
-    //     res.render("home.ejs",{data});
-    // }else{
-    //     data = [];
-    //     res.render("home.ejs",{data});
-    // }
-
     try {
         let data = await Task.find({});
-        console.log(data);
+        // console.log(data);
         if(data){
             res.render("home.ejs",{data});
         }else{
