@@ -87,7 +87,7 @@ app.get("/home/edit/:id",async(req,res)=>{
     res.render("edit.ejs",{task});
 });
 
-app.patch("/edited/:id",async(req,res)=>{
+app.patch("/home/edited/:id",async(req,res)=>{
     let {id}=req.params;
     // console.log(id);
     let {newtitle,newcontent}=req.body;
