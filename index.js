@@ -13,12 +13,10 @@ main().then(()=>{
     console.log("Connected Succesfully!");
 }).catch(err => console.log("error during connecting to database is:"+err));
 
-console.log(process.env.PORT);
-
 async function main() {
-  await mongoose.connect(process.env.MONGODB_CONNECT_URI);
-}
-
+    await mongoose.connect(process.env.MONGOD_CONNECT_URI);
+  }
+//   'mongodb://127.0.0.1:27017/todo'
 const User = require("./models/userSchema.js");
 const Task = require("./models/taskSchema.js");
 
@@ -89,7 +87,7 @@ app.get("/home/edit/:id",async(req,res)=>{
     res.render("edit.ejs",{task});
 });
 
-app.put("/home/edited/:id",async(req,res)=>{
+app.patch("/edited/:id",async(req,res)=>{
     let {id}=req.params;
     // console.log(id);
     let {newtitle,newcontent}=req.body;

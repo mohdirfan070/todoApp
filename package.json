@@ -11,11 +11,11 @@
   "author": "Mohammed Irfan",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "method-override": "^3.0.0",
     "mongodb": "^6.6.1",
-    "mongoose": "^6.10.1"
+    "mongoose": "^8.3.4"
   }
 }
