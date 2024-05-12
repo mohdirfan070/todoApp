@@ -1,6 +1,6 @@
 const express  = require("express");
 const app  =  express();
-require('dotenv').config(()=>{console.log("ENV aaya")});
+require('dotenv').config(console.log("ENV aaya"));
 const path = require("path");
 app.use(express.static(path.join(__dirname,"public/")));
 app.use(express.urlencoded({extended:true}));
@@ -14,7 +14,7 @@ main().then(()=>{
 }).catch(err => console.log("error during connecting to database is:"+err));
 
 async function main() {
-    await mongoose.connect(process.env.MONGOD_CONNECT_URI);
+    await mongoose.connect(process.env.MONGODB_CONNECT_URI);
   }
 //   'mongodb://127.0.0.1:27017/todo'
 const User = require("./models/userSchema.js");
