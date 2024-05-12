@@ -326,11 +326,11 @@
                         </form>
 
 
-                        <form class="form-res"  action="/home/edit/<%=element.id%>" method="get"><button style="background-color: transparent; border: none;"><i" style="margin: 0 0.3rem; scale: 1.4;" class="fa-solid fa-pen-to-square"></i></button>
+                        <form class="form-res"  action="/home/edit/<%=element.id%>" method="get"><button style="background-color: transparent; border: none;"><img id="edit-btn-img" src="images/editIcon.png" alt=""></button>
                         </form>
                         <form class="form-res" action="/home/delete/<%=element.id%>?_method=DELETE" method="post">
                             <input style="display: none;" type="text" name="id" value="<%= element.id%>">
-                    <button style="background-color: transparent; border: none; cursor: pointer;">   <i  style="margin: 0 0.3rem; scale: 1.4;" class="fa-solid fa-trash"></i> </button>
+                    <button style="background-color: transparent; border: none; cursor: pointer;">  <img style="height: 2.8rem;" id="edit-btn-img" src="images/deleteIcon.png" alt=""> </button>
                     </form>
                    
                 </div>
